@@ -1,7 +1,7 @@
 require_relative '../lib/queue'
 
-describe Queue do
-  subject(:queue) { Queue.new }
+describe Launch::Queue do
+  subject(:queue) { Launch::Queue.new }
 
   describe '#enter' do
     it 'allows items to enter the queue' do
@@ -41,7 +41,7 @@ describe Queue do
     end
 
     it 'raises an exception if the queue is empty' do
-      expect { queue.leave }.to raise_error(QueueIsEmpty)
+      expect { queue.leave }.to raise_error(Launch::QueueIsEmpty)
     end
   end
 end
